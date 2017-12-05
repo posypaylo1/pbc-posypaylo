@@ -2,6 +2,4 @@ l = list(range(10))
 
 def number_pairs(n):
     summ_ten = set([tuple(sorted([x, y])) for x in n for y in n if x + y == 10])
-    print(summ_ten)
-
-number_pairs(l)
+    return summ_ten

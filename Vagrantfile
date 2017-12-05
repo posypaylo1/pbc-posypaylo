@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-   config.vm.network :forwarded_port, guest: 80, host: 8080
+  # config.vm.network :forwarded_port, guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -44,7 +44,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider :virtualbox do |vb|
+  config.vm.provider "virtualbox" do |vb|
+  vb.name = "posypaylo"
+  end
   #   # Don't boot with headless mode
   #   vb.gui = true
   #
@@ -108,6 +110,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_key_path = "ORGNAME-validator.pem"
   # end
   #
+config.vm.provision "shell", inline: <<-SHELL
+     apt-get -y -q update
+     apt-get -y -q upgrade
+     apt-get -y -q install software-properties-common htop
+     add-apt-repository ppa:webupd8team/java
+     apt-get -y -q update
+     echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+     apt-get -y -q install oracle-java8-installer
+     update-java-alternatives -s java-8-oracle
+SHELL
   # If you're using the Opscode platform, your validator client is
   # ORGNAME-validator, replacing ORGNAME with your organization name.
   #
@@ -116,3 +128,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   #   chef.validation_client_name = "ORGNAME-validator"
 end
+
