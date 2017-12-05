@@ -1,7 +1,7 @@
 # pbc-posypaylo
 *python boot camp*
 
-**Lesson1**
+## [Day 1](https://gist.github.com/extsoft/bf1b9884cbaccf1eb2efd0330ae542c7)
 
 ## Vagrant setup
 Deploy VM with Vagrant, configure IP address and name. 
