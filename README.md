@@ -1,4 +1,4 @@
-# pbc
+# pbc-posypaylo
 *python boot camp*
 
 **Lesson1**
@@ -14,7 +14,7 @@ Deploy VM with Vagrant, configure IP address and name.
 - 'numbers_pairs.py' consist of function which returns pairs of numbers which sum is = 10 for a given collection of numbers
 
 
-##Lesson2
+## [Day 2](https://gist.github.com/extsoft/6aab6d4a3d143f40029233015508eab1)
 
 **Additional vagrant setup**
 
