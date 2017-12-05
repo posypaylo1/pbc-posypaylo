@@ -15,6 +15,7 @@ Deploy VM with Vagrant, configure IP address and name.
 
 
 ##Lesson2
+
 **Additional vagrant setup**
 
 Update VM:
