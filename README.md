@@ -11,7 +11,7 @@ Deploy VM with Vagrant, configure IP address and name.
   
 **New functions:**
 - 'fibonacci.py' consist of function which returns desired count of fibonacci numbers
-- 'numbers_pairs.py' consist of function which returns pairs of numbers which sum is = 10 for a given collection of numbers
+- 'numbers_pairs.py' consist of function which returns unique pairs of numbers which sum is = 10 for a given collection of numbers
 
 
 ## [Day 2](https://gist.github.com/extsoft/6aab6d4a3d143f40029233015508eab1)
@@ -33,3 +33,23 @@ To set up virtual environment execute setup_env.sh
 - 'unit_tests/test_fib.py' - tests for function "fib" from fibonacci.py (check quantity of numbers,
  output type; float, sting , zero inputs)
 - 'unit_tests/test_num_pairs.py' - tests for func "number_pairs" from numbers_pairs.py (check for expected sequence)
+
+
+## [Day 3](https://gist.github.com/extsoft/f9963e86d9162604fe2d012b0653d7d0)
+
+**Restructurize project**
+
+- Modules fibonacci.py and numbers_pairs.py were moved to main package(my_tested_app)
+
+- Unit tests were parametrized
+
+**Added marks:**
+
+- "pairs" - for test_num_pairs.py (be in your root project folder and execute: pytest -v -m pairs)
+- "numbers" - for test_fib.py (pytest -v -m numbers)
+          
+**Added CLI config for:**
+
+'fibonacci.py' - be on 
+
+'numbers_pairs.py'

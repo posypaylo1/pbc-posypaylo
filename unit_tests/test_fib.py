@@ -1,18 +1,26 @@
-from fibonacci import fib
+import pytest
+from my_tested_app import fib
 
-def test_quantity_of_numbers():
-    assert len(fib(2)) == 2
-
+@pytest.mark.numbers
 def test_output_type_is_list():
     assert type(fib(4)) is list
 
-def test_float_as_argument():
-    assert len(fib(3.1)) == 0
+@pytest.mark.numbers
+@pytest.mark.parametrize("test_input, expected", [
+    (1, 1),
+    (10, 10),
+    (100, 100),
+    (3.1, 0),
+    ("this is string", 0),
+    (0, 0),
+    (-2, 0)
+])
+def test_input(test_input, expected):
+    assert len(fib(test_input)) == expected
 
-def test_sting_as_argument():
-    assert len(fib('this is string')) == 0
 
-def test_use_zero_value_():
-    assert len(fib(0)) == 0
+
+
+
 
 
