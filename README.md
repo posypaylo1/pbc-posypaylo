@@ -50,6 +50,12 @@ To set up virtual environment execute setup_env.sh
           
 **Added CLI config for:**
 
-'fibonacci.py' - be on 
+'fibonacci.py' - be in unit_tests package, execute: python fibonacci.py -n "The required amount of sequence items"
 
-'numbers_pairs.py'
+'numbers_pairs.py' - be in unit_tests package, execute: python numbers_pairs.py -l "amount of items in list"
+
+**Added decorator for:**
+
+- Printing out tested inputs in fib function
+
+- Printing out tested inputs in number_pairs function
