@@ -54,7 +54,7 @@ To set up virtual environment execute setup_env.sh
 
 'fibonacci.py' - be in unit_tests package, execute: python fibonacci.py -n "The required amount of sequence items"
 
-'numbers_pairs.py' - be in unit_tests package, execute: python numbers_pairs.py -l "amount of items in list"
+'numbers_pairs.py' - be in unit_tests package, execute: python numbers_pairs.py -l "Enter sequence of numbers, use 'space' as divider"
 
 **Added decorator for:**
 
