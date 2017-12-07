@@ -1,14 +1,6 @@
 import argparse
+from log_decorator import log
 
-
-def log(func):
-    def wrapper(*args):
-        for a in args:
-            print('Tested input: "{}"'.format(a))
-        rs = func(*args)
-        print("Works well")
-        return rs
-    return wrapper
 
 @log
 def fib(n):

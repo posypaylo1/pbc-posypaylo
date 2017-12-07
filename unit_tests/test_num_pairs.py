@@ -2,28 +2,19 @@ import pytest
 from my_tested_app import number_pairs
 
 
-TEN_ITEMS_IN_LIST = {(2, 8), (3, 7), (1, 9), (4, 6), (5, 5)}
-MORE_THAN_TEN = {(5, 5), (4, 6), (2, 8), (0, 10), (1, 9), (3, 7)}
-NINE_ITEMS = {(2, 8), (3, 7), (4, 6), (5, 5)}
-EIGHT_ITEMS = {(3, 7), (4, 6), (5, 5)}
-SEVEN_ITEMS = {(4, 6), (5, 5)}
-SIX_ITEMS = {(5, 5)}
-LESS_THAN_SIX = set()
-
+test_data = [
+    pytest.param((4.5, 5.5), 1, id='float'),
+    pytest.param(('string1', 'string2'), 0, id="strings don't create pair"),
+    pytest.param((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, -3, -3, 3.0, 3.123, "asdasd"), 6, id='mixed data types'),
+    pytest.param((1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 5, id='numbers from 1 to 10'),
+]
 
 @pytest.mark.pairs
-@pytest.mark.parametrize("length, expected", [
-    (10, TEN_ITEMS_IN_LIST),
-    (20, MORE_THAN_TEN),
-    (100, MORE_THAN_TEN),
-    (9, NINE_ITEMS),
-    (8, EIGHT_ITEMS),
-    (7, SEVEN_ITEMS),
-    (6, SIX_ITEMS),
-    (5, LESS_THAN_SIX)
-])
+@pytest.mark.parametrize('sequence, expected', test_data)
 @pytest.mark.pairs
-def test_input(length, expected):
-    actual_sequence = number_pairs(length)
-    assert actual_sequence == expected
+def test_input(sequence, expected):
+    actual_sequence = number_pairs(*sequence)
+    print('this is func output: {}'.format(actual_sequence))
+    assert len(actual_sequence) == expected
+
 

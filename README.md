@@ -43,6 +43,8 @@ To set up virtual environment execute setup_env.sh
 
 - Unit tests were parametrized
 
+- For now on "number_pairs" function accepts unlimited numbers 
+
 **Added marks:**
 
 - "pairs" - for test_num_pairs.py (be in your root project folder and execute: pytest -v -m pairs)
