@@ -1,4 +1,3 @@
-import argparse
 from log_decorator import log
 
 
@@ -9,13 +8,6 @@ def number_pairs(*args):
     return summ_ten
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="returns unique pairs of numbers which sum is = 10 for"
-                                                 " a given sequence of numbers")
-    group = parser.add_argument_group("Parameters")
-    group.add_argument("-n", "--numbers", type=int, help="Enter sequence of numbers, use 'space' as divider",
-                       nargs='+', required=True)
-    args = parser.parse_args()
-    print(number_pairs(*args.numbers))
+
 
 

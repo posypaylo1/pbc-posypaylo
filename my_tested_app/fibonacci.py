@@ -1,4 +1,3 @@
-import argparse
 from log_decorator import log
 
 
@@ -18,13 +17,6 @@ def fib(n):
         a=b-a
         lst.append(b)
     return lst
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Returns given item amount of Fibonacci sequence")
-    parser.add_argument("-n", "--number", type=int, help="The required amount of sequence items")
-    args = parser.parse_args()
-    print(fib(args.number))
 
 
 
