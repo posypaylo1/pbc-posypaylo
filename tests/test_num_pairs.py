@@ -11,10 +11,8 @@ test_data = [
 
 @pytest.mark.pairs
 @pytest.mark.parametrize('sequence, expected', test_data)
-@pytest.mark.pairs
-def test_input(sequence, expected):
-    actual_sequence = number_pairs(*sequence)
-    print('this is func output: {}'.format(actual_sequence))
-    assert len(actual_sequence) == expected
+def test_input(setup_selenium, sequence, expected):
+    assert len(setup_selenium) == 2
+    assert len(number_pairs(*sequence)) == expected
 
 

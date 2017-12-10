@@ -3,3 +3,5 @@
 /.idea
 /unit_tests/.cache/
 /venv/
+.python
+venv/
