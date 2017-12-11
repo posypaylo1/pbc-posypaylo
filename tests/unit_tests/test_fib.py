@@ -1,5 +1,5 @@
 import pytest
-from my_tested_app import fib
+from pbc.tools import fib
 
 
 @pytest.mark.parametrize("test_input, expected", [
@@ -12,11 +12,13 @@ from my_tested_app import fib
     (-2, 0)
 ])
 @pytest.mark.numbers
-def test_input(setup_selenium, test_input, expected):
-    assert len(setup_selenium) == 2
+def test_input(test_input, expected):
     assert len(fib(test_input)) == expected
 
 
 @pytest.mark.numbers
 def test_output_type_is_list():
     assert type(fib(4)) is list
+
+
+

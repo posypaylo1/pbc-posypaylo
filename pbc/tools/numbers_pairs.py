@@ -1,4 +1,4 @@
-from log_decorator import log
+from pbc.log_decorator import log
 
 
 @log

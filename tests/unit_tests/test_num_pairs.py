@@ -1,5 +1,5 @@
 import pytest
-from my_tested_app import number_pairs
+from pbc.tools import number_pairs
 
 
 test_data = [
