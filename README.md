@@ -104,3 +104,20 @@ To set up virtual environment execute setup_env.sh
 - Check necessary running java processes on server
 
 - Check errors in log.txt
+
+
+## [Day 7](https://gist.github.com/extsoft/350299f8342207451073e35103cbe6b7)
+
+**Updated vagrant config:**
+
+- Added installation of firefox + geckodriver on VM
+ 
+
+**Edited selenium grid configuration:**
+
+-  selenium server reads configuration from sg-node.json
+
+
+**Added test for:**
+
+- Checks that grid enables expected amount of sessions
