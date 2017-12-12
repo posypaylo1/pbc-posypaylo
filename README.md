@@ -61,3 +61,46 @@ To set up virtual environment execute setup_env.sh
 - Printing out tested inputs in fib function
 
 - Printing out tested inputs in number_pairs function
+
+
+## [Day 5](https://gist.github.com/extsoft/479fe1c0b2422a991980fee920159724)
+
+**Added fixture:**
+
+- installs Selenium grid on Vagrant box using Python, pytest and paramiko before running tests.
+ To check run: pytest -s -v test
+
+
+## [Day 6](https://gist.github.com/extsoft/0a7861abc8459e180c26106a0e4238f0)
+
+**Added  Ssh class:**
+
+- start() - starts ssh connection using paramiko
+
+- send_command() - executes provided command and returns result
+
+- close() - closes connection
+
+**Added  GridSetup class:**
+
+- is_downloaded() - checks whether downloaded selenium server
+
+- download() - downloads selenium server if server wasn't downloaded
+
+- start_hub() - runs hub
+
+- add_node() - adds node
+
+**Added selenium_precondition fixture:**
+
+- Prepares standalone server for tests(executes methods from GridSetup class)
+
+- Returns connection
+
+- Do precondition (Kills all java processes and closes connection)
+
+**Added test for:**
+
+- Check necessary running java processes on server
+
+- Check errors in log.txt

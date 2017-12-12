@@ -1,28 +1,28 @@
 import paramiko
-from paramiko import client
 
 
 class Ssh:
-    client = None
-    def __init__(self):
+    def __init__(self, host, user_name, password):
         print("Connecting to server.")
-        self.client = client.SSHClient()
-        self.client.set_missing_host_key_policy(client.AutoAddPolicy)
-        self.client.connect('192.168.33.10', username='vagrant', password='vagrant')
+        self._host = host
+        self._user_name = user_name
+        self._password = password
+        self._client = self.start()
 
-    # def start(self):
-    #     try:
-    #         self.client.connect('192.168.33.10', username='vagrant', password='vagrant', timeout=15)
-    #         return self.client
-    #     except Exception as e:
-    #         print(e)
-    #         self.client.close()
-    #         return False
+    def start(self):
+        try:
+            client = paramiko.SSHClient()
+            client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
+            client.connect(self._host, username=self._user_name, password=self._password, timeout=15)
+            return client
+        except Exception as e:
+            print(e)
+            return False
 
     def send_command(self, command):
-        if self.client:
-            result = []
-            stdin, stdout, stderr = self.client.exec_command(command)
+        result = []
+        if self._client:
+            stdin, stdout, stderr = self._client.exec_command(command)
             while not stdout.channel.exit_status_ready():
                 # Print data when available
                 for row in stdout:
@@ -33,4 +33,5 @@ class Ssh:
 
 
     def close(self):
-        self.client.close()
+        self._client.close()
+        print('Connection closed!')

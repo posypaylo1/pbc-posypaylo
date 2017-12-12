@@ -4,3 +4,5 @@
 /venv/
 .python
 venv/
+/pbc/selenium_grid/.cache/
+/tests/unit_tests/.cache/

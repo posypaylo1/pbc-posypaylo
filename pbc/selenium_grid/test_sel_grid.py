@@ -1,10 +1,7 @@
-from pbc.selenium_grid.sg_setup import Grid
-
-
 def test_sel_grid(selenium_precondition):
-    grid = Grid()
-    assert len(grid.send_command('pgrep java')) == 2
-    stdout = grid.send_command('cat log.txt')
+    client = selenium_precondition
+    assert len(client.send_command('pgrep java')) == 2
+    stdout = client.send_command('cat log.txt')
     errors = []
     for row in stdout:
         if 'error' in row:
