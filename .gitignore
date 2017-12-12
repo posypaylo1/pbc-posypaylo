@@ -8,3 +8,4 @@ venv/
 /tests/unit_tests/.cache/
 /study.py
 /geckodriver.log
+/pbc/selenium_grid/geckodriver.log
