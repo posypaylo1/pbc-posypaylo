@@ -1,9 +1,0 @@
-{
-  "test_fib.py::test_input[-2-0]": true, 
-  "test_fib.py::test_input[0-0]": true, 
-  "test_fib.py::test_input[1-1]": true, 
-  "test_fib.py::test_input[10-10]": true, 
-  "test_fib.py::test_input[100-100]": true, 
-  "test_fib.py::test_input[3.1-0]": true, 
-  "test_fib.py::test_input[this is string-0]": true
-}
