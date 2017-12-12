@@ -72,6 +72,11 @@ config.vm.provision "shell", inline: <<-SHELL
      echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
      apt-get -y -q install oracle-java8-installer
      update-java-alternatives -s java-8-oracle
+     add-apt-repository ppa:mozillateam/firefox-next
+     apt-get -y install firefox
+     wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz
+     tar -xvzf geckodriver*
+     mv geckodriver /usr/local/sbin
 SHELL
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the

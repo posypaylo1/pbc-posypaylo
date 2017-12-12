@@ -13,7 +13,7 @@ class Ssh:
         try:
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
-            client.connect(self._host, username=self._user_name, password=self._password, timeout=15)
+            client.connect(self._host, username=self._user_name, password=self._password)
             return client
         except Exception as e:
             print(e)

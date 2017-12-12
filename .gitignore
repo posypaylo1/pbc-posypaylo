@@ -6,3 +6,5 @@
 venv/
 /pbc/selenium_grid/.cache/
 /tests/unit_tests/.cache/
+/study.py
+/geckodriver.log

@@ -31,6 +31,8 @@ class GridSetup(BaseGrid):
         if not self.is_downloaded():
             print 'Download'
             self._client.send_command('wget -O selenium-server-standalone-3.8.0.jar https://goo.gl/SVuU9X')
+            self._client.send_command(
+                'wget -O sg-node.json https://gist.github.com/extsoft/aed4cb6e0b1ae3cd1d38cafffdd79310/raw/')
 
 
     def start_hub(self):
@@ -41,6 +43,6 @@ class GridSetup(BaseGrid):
     def add_node(self):
         print 'Add node'
         self._client.send_command(
-        'java -jar selenium-server-standalone-3.8.0.jar -role node  -hub http://localhost:4444/grid/register >> log.txt 2>&1 &')
+        'java -jar selenium-server-standalone-3.8.0.jar -role node  -nodeConfig sg-node.json >> log.txt 2>&1 &')
 
 
