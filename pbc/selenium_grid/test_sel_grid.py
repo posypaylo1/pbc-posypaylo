@@ -1,6 +1,7 @@
 from selenium.webdriver import Firefox
 
 
+
 def test_sel_grid(selenium_precondition):
     client = selenium_precondition
     assert len(client.send_command('pgrep java')) == 2
