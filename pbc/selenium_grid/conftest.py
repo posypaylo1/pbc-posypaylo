@@ -1,6 +1,7 @@
 import pytest
 from pbc.selenium_grid.ssh_setup import Ssh
 from pbc.selenium_grid.sg_setup import GridSetup
+from selenium.webdriver import Firefox
 
 
 @pytest.fixture(scope="session")
@@ -17,3 +18,11 @@ def selenium_precondition(request):
         client.close()
     request.addfinalizer(fin)
     return client
+
+
+@pytest.fixture()
+def browser(request):
+    driver = Firefox()
+    request.addfinalizer(driver.close)
+    return driver
+
