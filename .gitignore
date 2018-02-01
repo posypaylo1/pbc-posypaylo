@@ -9,3 +9,8 @@ venv/
 /study.py
 /geckodriver.log
 /pbc/selenium_grid/geckodriver.log
+.cache/
+/pbc/selenium_grid/pycon.png
+/pbc/selenium_grid/python.png
+/pycon.png
+/python.png

@@ -121,3 +121,12 @@ To set up virtual environment execute setup_env.sh
 **Added test for:**
 
 - Checks that grid enables expected amount of sessions
+
+
+## [Day 8](https://gist.github.com/extsoft/0ebe6bfb63e77a6070775abeff53ccd2)
+
+**Added tests:**
+
+- rest test - checks running nodes
+
+- remote ui test

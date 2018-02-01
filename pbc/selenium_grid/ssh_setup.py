@@ -16,22 +16,15 @@ class Ssh:
             client.connect(self._host, username=self._user_name, password=self._password)
             return client
         except Exception as e:
-            print(e)
-            return False
+            raise e
 
     def send_command(self, command):
-        result = []
-        if self._client:
-            stdin, stdout, stderr = self._client.exec_command(command)
-            while not stdout.channel.exit_status_ready():
-                # Print data when available
-                for row in stdout:
-                    result.append(str(row))
-                return result
-        else:
-            print("Connection not opened.")
-
+        stdin, stdout, stderr = self._client.exec_command(command)
+        while not stdout.channel.exit_status_ready():
+            return stdout.read().splitlines()
 
     def close(self):
         self._client.close()
         print('Connection closed!')
+
+
